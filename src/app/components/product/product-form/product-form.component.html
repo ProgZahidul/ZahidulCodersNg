@@ -1,0 +1,27 @@
+<div>
+    <h2>{{ isEdit ? 'Edit' : 'Create' }} Product</h2>
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+        <label for="title">Title</label>
+        <input id="title" formControlName="title" />
+
+        <label for="brand">Brand</label>
+        <input id="brand" formControlName="brand" />
+
+        <label for="type">Type</label>
+        <input id="type" formControlName="type" />
+
+        <label for="description">Description</label>
+        <textarea id="description" formControlName="description"></textarea>
+
+        <label for="price">Price</label>
+        <input id="price" type="number" formControlName="price" />
+
+        <label for="categoryId">Category ID</label>
+        <input id="categoryId" type="number" formControlName="categoryId" />
+
+        <label for="imageFile">Image</label>
+        <input id="imageFile" type="file" (change)="onFileChange($event)" />
+
+        <button type="submit">{{ isEdit ? 'Update' : 'Create' }}</button>
+    </form>
+</div>
